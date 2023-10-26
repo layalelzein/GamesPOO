@@ -8,6 +8,7 @@ public final class App {
     private App() {
 
     };
+    
     /**
      * main entrypoint for my class.
      * @param args a bunch of string from the cli
