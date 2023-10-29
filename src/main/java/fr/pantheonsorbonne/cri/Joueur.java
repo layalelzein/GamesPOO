@@ -24,13 +24,4 @@ public abstract class Joueur {
         }
     }
 
-    /*public static void main(String[] args) {
-        InitGrille grille = new InitGrille();
-        Joueur joueur1 = new Joueur("Joueur 1");
-
-        joueur1.choisirCase(grille, 0, 0, 5); // Exemple de choix de case
-        joueur1.choisirChiffre(grille, 3); // Exemple de choix de chiffre
-
-        grille.afficherGrille();
-    }*/
 }

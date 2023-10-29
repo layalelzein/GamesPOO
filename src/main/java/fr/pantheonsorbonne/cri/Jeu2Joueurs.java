@@ -3,8 +3,7 @@ package fr.pantheonsorbonne.cri;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Jeu2Joueurs {
-    private Grille grille;
+public abstract class Jeu2Joueurs {
     private Joueur joueur1;
     private Joueur joueur2;
     public static final int PREMIER_JOUEUR = new Random().nextInt(2); // Génère soit 0, soit 1
@@ -13,7 +12,6 @@ public class Jeu2Joueurs {
 
 
     public Jeu2Joueurs(Joueur joueur1, Joueur joueur2) {
-        grille = new Grille();
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
     }
@@ -43,7 +41,7 @@ public class Jeu2Joueurs {
             coupsJoues++;
 
             // Vérifier si le joueur actuel a gagné
-            if (grille.aGagne(joueurActuel)) {
+            if (aGagne(joueurActuel)) {
                 partieTerminee = true;
                 System.out.println(joueurActuel.getNom() + " a gagné !");
             }
@@ -56,12 +54,8 @@ public class Jeu2Joueurs {
             System.out.println("La partie est un match nul !");
         }
 
-        grille.afficherGrille();
         sc.close();
-    }*/
+    }
 
-    /*public static void main(String[] args) {
-        Jeu2Joueurs jeu = new Jeu2Joueurs();
-        jeu.jouer();
-    }*/
+    public abstract boolean aGagne(Joueur J);
 }

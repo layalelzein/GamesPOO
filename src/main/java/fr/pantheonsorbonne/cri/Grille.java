@@ -21,7 +21,7 @@ public abstract class Grille {
 
     // Méthode pour insérer un chiffre dans une case de la grille aprés avoir vérifier que la case est bien vide
     public void setCase(int ligne,  int colonne, int chiffre) {//throws caseInvalideException
-        if(estCaseVide(ligne,colonne)){
+        if(estCaseVide(ligne,colonne)&&estChiffreValide(chiffre)){
             grille[ligne][colonne]=chiffre;
         }else{
             System.out.println("Case invalide. Veuillez réessayer.");
@@ -37,6 +37,8 @@ public abstract class Grille {
         return false;
     }
 
+    // Méthode pour vérifier si un chiffre est valide
+    public abstract boolean estChiffreValide(int chiffre);
 
     // Vérifie si le chiffre existe déjà dans la grille
     public boolean chiffreExiste(int chiffre){
@@ -49,11 +51,4 @@ public abstract class Grille {
         }
         return false;
     }
-
-    public abstract boolean aGagne(Joueur j);
-    
-    /*public static void main(String[] args) {
-        InitGrille grille = new InitGrille(); // Crée une instance de la classe InitGrille
-        grille.afficherGrille(); // Affiche la grille initiale
-    }*/
 }
